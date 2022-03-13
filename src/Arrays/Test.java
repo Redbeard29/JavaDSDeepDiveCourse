@@ -13,8 +13,13 @@ public class Test {
         intArray[5] = 1;
         intArray[6] = -22;
 
+        int index = 0;
+
         for(int x = 0; x < intArray.length; x++){
-            System.out.println(intArray[x]);
+            if(intArray[x] == 7){
+                index = x;
+                System.out.println("Index of 7 is " + index);
+            }
         }
     }
 
