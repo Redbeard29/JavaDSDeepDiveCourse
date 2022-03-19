@@ -25,7 +25,7 @@ public class SelectionSort {
             sortedPartitionIdx--;
 
         }
-        
+
         return intArray;
     }
 
