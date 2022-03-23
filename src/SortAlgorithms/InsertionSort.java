@@ -4,24 +4,18 @@ public class InsertionSort {
 
     public static int[] insertionSort(int[] intArray){
 
-        int sortedPartitionIdx = 0;
+        for(int firstUnsortedIdx = 1; firstUnsortedIdx < intArray.length; firstUnsortedIdx++){
 
-        for(int firstUnsortedIdx = sortedPartitionIdx + 1; firstUnsortedIdx < intArray.length; firstUnsortedIdx++){
-            if(intArray[firstUnsortedIdx] > intArray[sortedPartitionIdx]){
-                sortedPartitionIdx ++;
+            int newElement = intArray[firstUnsortedIdx];
+
+            int x;
+
+            for(x = firstUnsortedIdx; x > 0 && intArray[x - 1] > newElement; x--){
+                intArray[x] = intArray[x - 1];
             }
-            else{
-                //Need to account for case when item you want to insert is at the very beginning of the array
-                //You are currently looping outside of bounds by decrementing currentElem while already being
-                //at index 0
-                int currentElem = sortedPartitionIdx;
-                int temp = intArray[firstUnsortedIdx];
-                while(temp < intArray[currentElem]){
-                    intArray[currentElem + 1] = intArray[currentElem];
-                    currentElem--;
-                }
-                intArray[currentElem + 1] = temp;
-            }
+
+            intArray[x] = newElement;
+
         }
 
         return intArray;
