@@ -7,7 +7,6 @@ public class InsertionSort {
         for(int firstUnsortedIdx = 1; firstUnsortedIdx < intArray.length; firstUnsortedIdx++){
 
             int newElement = intArray[firstUnsortedIdx];
-
             int x;
 
             for(x = firstUnsortedIdx; x > 0 && intArray[x - 1] > newElement; x--){
